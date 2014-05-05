@@ -64,6 +64,7 @@ function performCheckin(data,employee){
     transac.oncomplete = function (event) {
 
       console.log("Exito! WT agregado ");
+      socket.emit("addWT",checkin);
     };      
     transac.onerror = function(event){
       console.log("Error de IndexedDB al agregar un nuevo WT");
